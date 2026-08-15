@@ -38,7 +38,7 @@ export function Constellation() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="network" className="relative px-6 py-24 md:py-36">
+    <section id="network" className="relative px-6 py-24 md:px-10 md:py-36">
       <div className="mx-auto max-w-3xl text-center">
         <p className="eyebrow mb-4 text-violet/70">Constellation / 01</p>
         <h2 className="text-balance font-display text-3xl font-medium tracking-tight text-star md:text-4xl">

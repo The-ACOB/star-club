@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function Vision() {
   return (
-    <section id="vision" className="relative px-6 py-28 md:py-40">
+    <section id="vision" className="relative px-6 py-28 md:px-10 md:py-40">
       <div className="mx-auto max-w-3xl">
         <motion.p
           initial={{ opacity: 0, y: 8 }}

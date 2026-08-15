@@ -17,7 +17,7 @@ export function NetworkForming() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="relative overflow-hidden px-6 py-28 md:py-40">
+    <section className="relative overflow-hidden px-6 py-28 md:px-10 md:py-40">
       <div className="mx-auto max-w-2xl text-center">
         <motion.h2
           initial={{ opacity: 0, y: 14 }}

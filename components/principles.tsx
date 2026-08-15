@@ -95,7 +95,7 @@ function ConstellationGlyph({ points, edges }: Pick<Principle, "points" | "edges
 
 export function Principles() {
   return (
-    <section className="relative px-6 py-24 md:py-32">
+    <section className="relative px-6 py-24 md:px-10 md:py-32">
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-line bg-line/40 md:grid-cols-3">
           {principles.map((p, i) => (

@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import { Atmosphere } from "@/components/atmosphere";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { Navbar } from "@/components/navbar";
@@ -11,31 +8,26 @@ import { Constellation } from "@/components/constellation";
 import { NetworkForming } from "@/components/network-forming";
 import { ComingSoon } from "@/components/coming-soon";
 import { Footer } from "@/components/footer";
-import { NotifyModal } from "@/components/notify-modal";
 
 export default function Home() {
-  const [modalOpen, setModalOpen] = useState(false);
-
   return (
     <SmoothScroll>
       <Atmosphere />
 
       <div className="relative z-10">
-        <Navbar onNotify={() => setModalOpen(true)} />
+        <Navbar />
 
         <main>
-          <Hero onNotify={() => setModalOpen(true)} />
+          <Hero />
           <Vision />
           <Principles />
           <Constellation />
           <NetworkForming />
-          <ComingSoon onNotify={() => setModalOpen(true)} />
+          <ComingSoon />
         </main>
 
         <Footer />
       </div>
-
-      <NotifyModal open={modalOpen} onClose={() => setModalOpen(false)} />
     </SmoothScroll>
   );
 }

@@ -74,9 +74,10 @@ body {
 /* ---------- Typography helpers ---------- */
 
 .eyebrow {
-  font-family: var(--font-geist-mono);
+  font-family: var(--font-geist-sans);
+  font-weight: 500;
   font-size: 11px;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: theme("colors.mist");
 }

@@ -104,56 +104,56 @@ function Core({ reduced }: { reduced: boolean }) {
     }
   });
 
-  const scale = Math.min(viewport.width / 6.2, 1.15);
+  const scale = Math.min(viewport.width / 8, 0.82);
 
   return (
     <group ref={coreRef} scale={scale}>
-      {/* Faceted core */}
+      {/* Faceted core — dark, low-contrast, no direct specular hotspots */}
       <mesh ref={innerRef}>
         <icosahedronGeometry args={[0.85, 1]} />
         <meshStandardMaterial
-          color="#0c0c14"
-          roughness={0.35}
-          metalness={0.6}
-          emissive="#3a2b7a"
-          emissiveIntensity={0.12}
+          color="#0a0a10"
+          roughness={0.9}
+          metalness={0.1}
+          emissive="#241a4d"
+          emissiveIntensity={0.18}
           flatShading
         />
       </mesh>
       <mesh>
-        <icosahedronGeometry args={[0.86, 1]} />
+        <icosahedronGeometry args={[0.855, 1]} />
         <meshBasicMaterial
           color="#8b6bff"
           wireframe
           transparent
-          opacity={0.08}
+          opacity={0.05}
         />
       </mesh>
 
       {/* Orbital rings */}
       <group ref={ring1} rotation={[Math.PI / 2.3, 0, 0]}>
         <mesh>
-          <torusGeometry args={[1.35, 0.0025, 8, 128]} />
-          <meshBasicMaterial color="#8b6bff" transparent opacity={0.35} />
+          <torusGeometry args={[1.35, 0.0022, 8, 128]} />
+          <meshBasicMaterial color="#8b6bff" transparent opacity={0.22} />
         </mesh>
       </group>
       <group ref={ring2} rotation={[0.4, Math.PI / 3, 0]}>
         <mesh>
-          <torusGeometry args={[1.62, 0.0022, 8, 128]} />
-          <meshBasicMaterial color="#6de0ff" transparent opacity={0.22} />
+          <torusGeometry args={[1.62, 0.002, 8, 128]} />
+          <meshBasicMaterial color="#6de0ff" transparent opacity={0.14} />
         </mesh>
       </group>
       <group ref={ring3} rotation={[1.1, 0, Math.PI / 5]}>
         <mesh>
-          <torusGeometry args={[1.85, 0.002, 8, 128]} />
-          <meshBasicMaterial color="#5b7fff" transparent opacity={0.16} />
+          <torusGeometry args={[1.85, 0.0018, 8, 128]} />
+          <meshBasicMaterial color="#5b7fff" transparent opacity={0.1} />
         </mesh>
       </group>
 
       {/* Luminous nodes */}
       {nodes.map((p, i) => (
         <mesh key={i} position={p}>
-          <sphereGeometry args={[0.014 + (i % 3) * 0.006, 8, 8]} />
+          <sphereGeometry args={[0.011 + (i % 3) * 0.004, 8, 8]} />
           <meshBasicMaterial color={i % 5 === 0 ? "#6de0ff" : "#f5f4f8"} />
         </mesh>
       ))}
@@ -171,13 +171,13 @@ function Core({ reduced }: { reduced: boolean }) {
             attach="material"
             color="#8b6bff"
             transparent
-            opacity={0.14}
+            opacity={0.1}
           />
         </line>
       ))}
 
-      <pointLight position={[2, 1, 2]} intensity={8} color="#8b6bff" distance={6} />
-      <pointLight position={[-2, -1, -1]} intensity={4} color="#6de0ff" distance={6} />
+      <pointLight position={[3, 2, 3]} intensity={0.9} color="#8b6bff" distance={10} decay={2} />
+      <pointLight position={[-3, -2, -2]} intensity={0.5} color="#6de0ff" distance={10} decay={2} />
     </group>
   );
 }
@@ -206,18 +206,18 @@ export function KnowledgeCore() {
     return (
       <div
         aria-hidden="true"
-        className="relative h-[420px] w-[420px] max-w-[80vw] mx-auto"
+        className="relative h-[280px] w-[280px] max-w-[70vw] mx-auto"
       >
         <div className="absolute inset-0 rounded-full border border-line" />
         <div className="absolute inset-8 rounded-full border border-line-strong" />
-        <div className="absolute inset-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet shadow-[0_0_40px_10px_rgba(139,107,255,0.35)]" />
+        <div className="absolute inset-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet shadow-[0_0_30px_8px_rgba(139,107,255,0.3)]" />
       </div>
     );
   }
 
   return (
     <div
-      className="relative h-[460px] w-full max-w-[560px] mx-auto md:h-[560px]"
+      className="relative mx-auto h-[280px] w-full max-w-[340px] md:h-[340px] md:max-w-[400px]"
       aria-hidden="true"
     >
       <Canvas
@@ -225,7 +225,7 @@ export function KnowledgeCore() {
         camera={{ position: [0, 0, 5.4], fov: 42 }}
         gl={{ antialias: true, alpha: true }}
       >
-        <ambientLight intensity={0.15} />
+        <ambientLight intensity={0.25} />
         <Core reduced={reduced} />
       </Canvas>
     </div>

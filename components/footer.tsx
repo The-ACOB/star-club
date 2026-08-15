@@ -13,7 +13,7 @@ export function Footer() {
 
         <div className="flex items-center gap-6">
           <a
-            href="https://acob.org"
+            href="https://www.theacob.com"
             target="_blank"
             rel="noreferrer"
             className="text-xs text-mist transition-colors hover:text-star"
@@ -21,26 +21,28 @@ export function Footer() {
             ACOB
           </a>
           <a
-            href="mailto:hello@acob.org"
+            href="mailto:reachappliedcognitio@gmail.com"
             className="text-xs text-mist transition-colors hover:text-star"
           >
-            Contact
+            Facebook
           </a>
           <a
-            href="#"
-            className="text-xs text-mist transition-colors hover:text-star"
-          >
-            Instagram
-          </a>
-          <a
-            href="#"
+            href="https://www.linkedin.com/company/appliedcognitiobd"
             className="text-xs text-mist transition-colors hover:text-star"
           >
             LinkedIn
           </a>
+          <a
+            href="https://www.youtube.com"
+            className="text-xs text-mist transition-colors hover:text-star"
+          >
+            YouTube
+          </a>
         </div>
 
-        <span className="mono-meta text-[10px] text-ash">&copy; 2026 ACOB</span>
+        <span className="mono-meta text-[10px] text-ash">
+          &copy; 2026 Applied Cognitio Olympiad Bangladesh
+        </span>
       </div>
     </footer>
   );
